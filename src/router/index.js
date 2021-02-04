@@ -4,6 +4,7 @@ import TLFriend from '@/views/friend'
 const routes = [
   {
     path: '/',
+    exact: true,
     component: TLDiscover
   },
   {
