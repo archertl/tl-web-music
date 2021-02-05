@@ -67,7 +67,17 @@ export const HeaderWrapper = styled.div`
       }
       .active, a:hover {
         background-color: #000;
-          color: #fff;
+        color: #fff;
+      }
+      .active::after {
+        content: '';
+        background: url(${sprite01}) no-repeat -226px 0;
+        width: 12px;
+        height: 6px;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
       }
     }
   }

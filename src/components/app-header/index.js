@@ -8,7 +8,7 @@ import TLSearch from './search'
 export default memo(function TLAppHeader() {
   const navJsx = headerLinks.map( (item,i) => {
     if(i < 3) {
-      return <NavLink to={item.link} exact={i === 0} key={item.title}>{item.title}</NavLink>
+      return <NavLink to={item.link} key={item.title}>{item.title}</NavLink>
     } else {
       return <a href={item.link} key={item.title}>{item.title}</a>
     }
