@@ -6,17 +6,18 @@ import { dicoverMenu } from '@/common/local-data'
 import { NavLink } from 'react-router-dom'
 
 export default memo(function TLDiscover(props) {
-  const { routes } = props
-  console.log(routes);
+  const { route } = props
   const dicoverMenuJsx = dicoverMenu.map( item => (
-    <NavLink to={ '/discover' + item.link} key={item.title}>{item.title}</NavLink>
+    <NavLink className="nav-item" to={ '/discover' + item.link} key={item.title}>{item.title}</NavLink>
   ))
   return (
     <DiscoverWrapper>
-      <div className="wrap-v2">
-        {dicoverMenuJsx}
+      <div className="nav">
+        <div className="wrap-v2 nav-con">
+          {dicoverMenuJsx}
+        </div>
       </div>
-      {renderRoutes(routes)}
+      {renderRoutes(route.routes)}
     </DiscoverWrapper>
   )
 })

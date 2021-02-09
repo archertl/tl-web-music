@@ -2,12 +2,12 @@ import styled from 'styled-components'
 import sprite01 from '@/assets/img/sprite_01.png'
 
 export const HeaderWrapper = styled.div`
-  height: 75px;
+  height: 76x;
   background: #242424;
-  border-bottom: 5px solid #C20C0C;
+  border-bottom: 6px solid #C20C0C;
   .con {
     display: flex;
-    height: 100%;
+    height: 70px;
     justify-content: space-between;
     .left {
       display: flex;
@@ -42,7 +42,7 @@ export const HeaderWrapper = styled.div`
     .logo {
       width: 157px;
       background-position: 0 0;
-      padding-right: 20px;
+      margin-right: 20px;
     }
     .nav {
       display: flex;

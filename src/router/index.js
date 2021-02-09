@@ -1,6 +1,10 @@
 import TLDiscover from '@/views/discover'
 import TLRecommend from '@/views/discover/views/recommend'
-
+import TLRanking from '@/views/discover/views/ranking'
+import TLSongs from '@/views/discover/views/songs'
+import TLDjradio from '@/views/discover/views/djradio'
+import TLArtist from '@/views/discover/views/artist'
+import TLAlbum from '@/views/discover/views/album'
 
 import TLMine from '@/views/mine'
 import TLFriend from '@/views/friend'
@@ -14,9 +18,10 @@ const routes = [
   {
     path: '/discover',
     component: TLDiscover,
-    children: [
+    routes: [
       {
         path: '/discover',
+        exact: true,
         render: () => <Redirect to="/discover/recommend"/>
       },
       {
@@ -24,19 +29,24 @@ const routes = [
         component: TLRecommend
       },
       {
-        path: '/discover/ranking'
+        path: '/discover/ranking',
+        component: TLRanking
       },
       {
-        path: '/discover/songs'
+        path: '/discover/songs',
+        component: TLSongs
       },
       {
-        path: '/discover/djradio'
+        path: '/discover/djradio',
+        component: TLDjradio
       },
       {
-        path: '/discover/artist'
+        path: '/discover/artist',
+        component: TLArtist
       },
       {
         path: '/discover/album',
+        component: TLAlbum
       },
     ]
   },
