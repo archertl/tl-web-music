@@ -1,5 +1,9 @@
 import { get }  from './axios'
 
-export const getBanner = function() {
+export function getBanner () {
   return get('/banner')
+}
+
+export function getHotRecommend() {
+  return get('/personalized')
 }

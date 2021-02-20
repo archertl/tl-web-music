@@ -13,7 +13,7 @@ export default memo(function TLDiscover(props) {
   return (
     <DiscoverWrapper>
       <div className="nav">
-        <div className="wrap-v2 nav-con">
+        <div className="wrap-v1 nav-con">
           {dicoverMenuJsx}
         </div>
       </div>

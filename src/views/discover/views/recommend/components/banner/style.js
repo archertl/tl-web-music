@@ -8,6 +8,7 @@ export const BannerWrapper = styled.div`
   .bannerbox {
     display: flex;
     height: 285px;
+    position: relative;
     .left {
       width: 726px;
       img {
@@ -30,6 +31,18 @@ export const BannerWrapper = styled.div`
       p {
         margin: 10px auto;
       }
+    }
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      left: -68px;
+      margin-top: -31px;
+      width: 37px;
+      height: 63px;
+    }
+    .next {
+      left: auto;
+      right: -68px;
     }
   }
 `

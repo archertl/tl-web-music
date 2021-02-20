@@ -1,14 +1,17 @@
-import React, { memo, useEffect, useState, useCallback } from 'react'
+import React, { memo, useEffect, useState, useCallback, useRef } from 'react'
 import { useDispatch,useSelector,shallowEqual} from 'react-redux'
 
 import { Carousel } from 'antd';
 import { BannerWrapper } from './style'
 import {
   getBannerAction
-} from '@/store/recommend/actionCreactors'
+} from '@/store/recommend/actionCreators'
+import prevImg from '@/assets/img/banner-control-left.png'
+import nextImg from '@/assets/img/banner-control-right.png'
 
 export default memo(function TLBanner() {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const bannerRef = useRef()
   const dispatch = useDispatch()
   const state = useSelector(state =>({
     banners: state.recommend.banners
@@ -31,7 +34,7 @@ export default memo(function TLBanner() {
     <BannerWrapper backgroundImgUrl={bgImg}>
       <div className="wrap-v2 bannerbox">
         <div className="left">
-          <Carousel effect="fade" beforeChange={bannerChange} autoplay>
+          <Carousel effect="fade" beforeChange={bannerChange} ref={bannerRef} autoplay>
             {bannerItemsJsx}
           </Carousel>
         </div>
@@ -39,9 +42,13 @@ export default memo(function TLBanner() {
           <a href="https://music.163.com/#/download" className="download"> </a>
           <p>PC 安卓 iPhone WP iPad Mac 六大客户端</p>
         </div>
+        <div className="prev" onClick={() => bannerRef.current.prev()}>
+          <img src={prevImg} alt=""/>
+        </div>
+        <div className="next" onClick={() => bannerRef.current.next()}>
+          <img src={nextImg} alt=""/>
+        </div>
       </div>
-      <div className="pre"></div>
-      <div className="next"></div>
     </BannerWrapper>
   )
 })
