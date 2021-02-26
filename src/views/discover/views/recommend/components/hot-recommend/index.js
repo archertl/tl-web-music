@@ -3,6 +3,7 @@ import { useSelector, shallowEqual, useDispatch } from 'react-redux'
 
 import { HotRecommendWrapper } from './style'
 import TLThemeHeaderRcm from '@/components/tl-theme-header-rcm'
+import TLThemeCover from '@/components/theme-cover'
 import { getRecommendsAction } from '@/store/recommend/actionCreators'
 
 export default memo(function TLHotRecommend() {
@@ -15,15 +16,19 @@ export default memo(function TLHotRecommend() {
     return () => {
     }
   }, [dispatch])
-  console.log(state.recommends);
+  const itemListJsx = state.recommends.map(item => (
+    <div className="cover" key={item.id}>
+      <TLThemeCover item={item}></TLThemeCover>
+    </div>
+  ))
   return (
     <HotRecommendWrapper>
       <TLThemeHeaderRcm title="热门推荐"
                         titleLink="/discover/songs"
                         moreLink="/discover/songs"
                         keywords={['华语','流行','摇滚','民谣','电子']}></TLThemeHeaderRcm>
-      <div>
-
+      <div className="list">
+        {itemListJsx}
       </div>
     </HotRecommendWrapper>
   )
