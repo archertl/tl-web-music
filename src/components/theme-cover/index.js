@@ -8,8 +8,6 @@ import { ThemeCoverWrapper } from './style'
 
 export default memo(function TLThemeCover(props) {
   const { item } = props
-  console.log(item);
-  
   return (
     <ThemeCoverWrapper>
       <div className="cover">

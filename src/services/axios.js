@@ -56,7 +56,7 @@ export const get = function (url, params) {
 export const post = function (url, params) {
   return new Promise((resolve, reject) => {
     instance.post(url, params).then(res => {
-      resolve(res.data)
+      resolve(res)
     }).catch(err => {
       reject(err)
     })

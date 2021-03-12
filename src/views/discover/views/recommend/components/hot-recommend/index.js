@@ -4,7 +4,9 @@ import { useSelector, shallowEqual, useDispatch } from 'react-redux'
 import { HotRecommendWrapper } from './style'
 import TLThemeHeaderRcm from '@/components/tl-theme-header-rcm'
 import TLThemeCover from '@/components/theme-cover'
-import { getRecommendsAction } from '@/store/recommend/actionCreators'
+import { 
+  getRecommendsAction
+} from '@/store/recommend/actionCreators'
 
 export default memo(function TLHotRecommend() {
   const state = useSelector(state => ({
