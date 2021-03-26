@@ -1,5 +1,5 @@
 import React, { memo, useEffect, useState, useCallback, useRef } from 'react'
-import { useDispatch,useSelector,shallowEqual} from 'react-redux'
+import { useDispatch,useSelector,shallowEqual } from 'react-redux'
 
 import { Carousel } from 'antd';
 import { BannerWrapper } from './style'
